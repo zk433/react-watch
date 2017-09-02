@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React watch</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<style>
+		.clock {
+		  position: relative;
+		  display: block;
+		  margin: auto;
+		  margin-top: 10%;
+		  width: 400px;
+		  height: 400px;
+		}
+
+		.strap {
+		  display: block;
+		  margin: auto;
+		  width: 200px;
+		  height: 380px;
+		  background: #42C4AE;
+		  border-radius: 25px;
+		}
+
+		.face {
+		  width: 250px;
+		  height: 250px;
+		  border-radius: 50%;
+		  background-color: #affeec;
+		  position: absolute;
+		  top: 10%;
+		  left: 13%;
+		  border: 25px solid #28eab9;
+		}
+		time {
+			position: absolute;
+			top: 37%;
+			left: 24%;
+			color: #85BDB3; 
+			text-align: center; 
+			font-weight: 800;
+			font-size: 3.7rem;
+			font-family: 'Raleway', sans-serif;
+			text-shadow: 0 0 0.5em white;
+		}
+	</style>
+</head>
+<body>
+	<div id="root"></div>
+
+	<script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.js"></script>
+
+	<script type="text/babel">
+
+	function tick() {
+
+		const element = (
+			<div className = "clock">
+				<div className = "strap" />
+				<div className = "face" />
+				<time>{new Date().toLocaleTimeString()}</time>
+			</div>
+		)
+
+		ReactDOM.render(
+			element,
+			document.getElementById('root')
+		);
+	}
+
+	setInterval(tick, 1000);
+
+	</script>
+</body>
+</html>
